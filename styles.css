@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Coiny&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Young+Serif&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("./images/3452442.jpg") no-repeat center center/cover;
+  overflow: hidden;
+  font-family: "Jost", sans-serif;
+  position: relative;
+}
+
+.overlay {
+  position: fixed; /* Make sure it covers everything */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* Adjust this value */
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  /* color: #fff; */
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.todo-app h1 {
+  font-size: 2.2rem;
+}
+
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 22px;
+  background-color: rgba(74, 243, 255, 0.3);
+  color: #dbdbdb;
+}
+
+.input-area input::placeholder {
+  color: #e2e2e2;
+}
+
+.input-area button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  background-color: rgba(74, 243, 255, 0.3);
+  border: 2px solid rgba(0, 204, 211, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+  background-color: #005c5f;
+  transform: scale(1.1);
+}
+
+/* .todos-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.task-list {
+  width: 100%;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  background-color: rgba(74, 243, 255, 0.3);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+#task-list li:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#task-list li .task-checkbox {
+  min-width: 25px;
+  height: 25px;
+  border: 2px solid rgba(98, 245, 255, 0.9);
+  background: transparent;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#task-list li .task-checkbox:checked {
+  background: #008286;
+  transform: scale(1.1);
+}
+
+#task-list li .task-checkbox:checked::before {
+  content: "\2713";
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+#task-list li span {
+  flex: 1;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.task-buttons button {
+  background: rgba(0, 119, 128, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-buttons button:hover {
+  /* background: #ff6f91; */
+  transform: scale(1.1);
+}
+
+.task-buttons .edit-btn {
+  background: #ffbf00;
+}
+.task-buttons .delete-btn {
+  background: #008286;
+}
+
+#task-list li.completed span {
+  text-decoration: 2px line-through #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+.stat-container {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 204, 211, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+}
+
+.details h3 {
+  color: #000000;
+}
+
+#progressbar {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 99, 102, 0.3);
+  border-radius: 20px;
+  position: relative;
+  margin-top: 15px;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background: #19f7ff;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+#numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: #00ccd3;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer a {
+  color: #23f8ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  .container {
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+  .todo-app {
+    padding: 1.5rem;
+    gap: 20px;
+  }
+
+  .todo-app h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-area input {
+    font-size: 1rem;
+  }
+
+  #task-list li {
+    font-size: 1rem;
+  }
+
+  #numbers {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+}
